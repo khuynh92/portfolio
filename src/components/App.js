@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Dashboard from './Dashboard.js';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './Navbar.js';
+import About from './About.js';
 
 export default class App extends Component {
   render() {
@@ -9,7 +10,8 @@ export default class App extends Component {
       <BrowserRouter>
         <React.Fragment>
           <Navbar />
-          <Route path='/' component={Dashboard} />
+          <Route exact path='/' component={Dashboard} />
+          <Route path='/about' component={About}/>
         </React.Fragment>
       </BrowserRouter>
     );

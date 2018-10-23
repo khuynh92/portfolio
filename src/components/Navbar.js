@@ -25,6 +25,7 @@ const styles = theme => {
     appBar: {
       backgroundColor: 'white',
       boxShadow: 'none',
+      marginBottom: '3vh',
     },
     root: {
       flexGrow: 1,
@@ -42,6 +43,7 @@ const styles = theme => {
       marginRight: 20,
     },
     link: {
+      color: '#4E4F4A',
       textDecoration: 'none',
     },
     list: {
@@ -60,14 +62,18 @@ const styles = theme => {
       padding: 0,
     },
     listIcon: {
+      color: '#4E4F4A',
       marginRight: 2,
+    },
+    listText: {
+      color: '#4E4F4A',
     },
     button: {
       width: 110,
       padding: 0,
       paddingRight: 5,
     },
-  }
+  };
 };
 
 class Navbar extends Component {
@@ -100,7 +106,7 @@ class Navbar extends Component {
 
             <List className={classes.list}>
               <ListItem className={classes.listItem} onMouseLeave={() => this.itemOnLeave('homeSlide')} onMouseEnter={() => this.itemOnHover('homeSlide')}>
-                <Link to='/dashboard' className={classes.link}>
+                <Link to='/' className={classes.link}>
                   <Button className={classes.button} >
                     <HomeOutline className={classes.listIcon} />
                     <Slide direction='down' in={this.state.homeSlide} timeout={300}>
