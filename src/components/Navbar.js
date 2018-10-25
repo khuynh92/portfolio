@@ -25,7 +25,7 @@ const styles = theme => {
     appBar: {
       backgroundColor: 'white',
       boxShadow: 'none',
-      marginBottom: '3vh',
+      marginBottom: '0vh',
     },
     root: {
       flexGrow: 1,
