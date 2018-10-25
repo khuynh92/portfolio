@@ -97,7 +97,7 @@ class NavMenu extends React.Component {
       <div className={classes.list}>
         <Typography className={classes.menu} variant='headline'>Menu</Typography>
 
-        <Link to='/dashboard' className={classes.link}>
+        <Link to='/' className={classes.link}>
           <List className={classes.li}>
             <Button className={classes.button}>
               <HomeOutline />
