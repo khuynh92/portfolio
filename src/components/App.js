@@ -10,7 +10,7 @@ import Projects from './Projects.js';
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <React.Fragment>
           <Navbar />
           <Route exact path='/' component={Dashboard} />
