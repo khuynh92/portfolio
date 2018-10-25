@@ -1,5 +1,5 @@
 {
-  "name": "chewsit-client",
+  "name": "khuynh92.github.io",
   "version": "1.0.0",
   "description": "This project is a basic introduction into react.",
   "main": "index.js",
@@ -8,7 +8,9 @@
     "watch": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "start": "node ./src/server.js",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "transformIgnorePatterns": [
@@ -36,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/khuynh92/chewsit-client/issues"
   },
-  "homepage": "https://github.com/khuynh92/chewsit-client#readme",
+  "homepage": "https://khuynh92.github.io",
   "devDependencies": {
     "@material-ui/core": "^3.0.2",
     "@material-ui/icons": "^3.0.1",
