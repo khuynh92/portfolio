@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import About from './About.js';
 import Photos from './Photos.js';
+import Projects from './Projects.js';
 
 
 export default class App extends Component {
@@ -14,6 +15,7 @@ export default class App extends Component {
           <Navbar />
           <Route exact path='/' component={Dashboard} />
           <Route path='/about' component={About}/>
+          {/* <Route path='/projects' component={Projects}/> */}
           <Route path='/projects' component={Dashboard}/>
           <Route path='/photos' component={Photos}/>
 
