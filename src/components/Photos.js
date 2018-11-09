@@ -91,43 +91,43 @@ class Photos extends Component {
             </Card>
 
             <div className={classes.threeRow}>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={heatherMaple} className={classes.image} />
               </Card>
-              <Card className={classes.smallImage} elevation={8}>
+              <Card className={classes.middleImage} elevation={8}>
                 <img src={infinity} className={classes.image} />
               </Card>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={bandera} className={classes.image} />
               </Card>
             </div>
 
             <div className={classes.threeRow}>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={highRock2} className={classes.image} />
               </Card>
-              <Card className={classes.smallImage} elevation={8}>
+              <Card className={classes.middleImage} elevation={8}>
                 <img src={highRock3} className={classes.image} />
               </Card>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={highRock1} className={classes.image} />
               </Card>
             </div>
 
             <div className={classes.threeRow}>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={rattle1} className={classes.image} />
               </Card>
-              <Card className={classes.smallImage} elevation={8}>
+              <Card className={classes.middleImage} elevation={8}>
                 <img src={melawka1} className={classes.image} />
               </Card>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={rattle2} className={classes.image} />
               </Card>
             </div>
 
             <div className={classes.threeRow}>
-              <Card className={classes.middleImage} elevation={8}>
+              <Card className={classes.smallImage} elevation={8}>
                 <img src={snowlake1} className={classes.image} />
               </Card>
               <Card className={classes.middleImage} elevation={8}>
