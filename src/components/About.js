@@ -69,7 +69,7 @@ class About extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ resume: !this.state.resume });
-    }, 3000);
+    }, 1500);
   }
   render() {
     const { classes } = this.props;
@@ -82,7 +82,7 @@ class About extends Component {
         >
           <Button className={classes.resumeButton} variant='outlined' color='primary' onClick={this.showResume}>{this.state.resume ? 'Close' : 'Resumé'}</Button>
           <a target='_blank' rel='noopener noreferrer' className={classes.resumeLink} href='https://s3-us-west-2.amazonaws.com/khoascloud/Khoa+Huynh+-+Resume.pdf'>or download Resumé</a>
-          <Collapse in={this.state.resume}>
+          <Collapse in={this.state.resume} timeout={1000}>
             <Resume />
           </Collapse>
           <div className={classes.profile}>
