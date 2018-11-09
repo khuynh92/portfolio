@@ -41,6 +41,14 @@ const styles = theme => {
       // justifyContent: 'center',
     },
     wideImage: {
+      [theme.breakpoints.between('xs', 'sm')]: {
+        width: '100%',
+      },
+      [theme.breakpoints.between('sm', 'md')]: {
+        width: '98%',
+        marginRight: '1%',
+        marginLeft: '1%',
+      },  
       marginTop: 10,
       marginBottom: 10,
       width: '100%',
