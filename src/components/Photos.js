@@ -35,10 +35,7 @@ const styles = theme => {
   return {
     container: {
       width: '90vw',
-      // display: 'flex',
       margin: 'auto',
-      // flexDirection: 'column',
-      // justifyContent: 'center',
     },
     wideImage: {
       [theme.breakpoints.between('xs', 'sm')]: {
@@ -48,7 +45,7 @@ const styles = theme => {
         width: '98%',
         marginRight: '1%',
         marginLeft: '1%',
-      },  
+      },
       marginTop: 10,
       marginBottom: 10,
       width: '100%',
@@ -120,51 +117,51 @@ class Photos extends Component {
       <Fragment>
         <Fade in={true} timeout={600}>
           <Grid className={classes.container}>
-            <Typography className={classes.introText} variant='overline'>In his free time, Khoa enjoys taking pictures.</Typography>
+            <Typography className={classes.introText} variant='overline'>PHOTOGRAPHY</Typography>
             <Card className={classes.wideImage} elevation={8}>
               <img src={fall} className={classes.image} />
             </Card>
 
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={heatherMaple} className={classes.image} />
-              </Card>
-              <Card className={classes.middleImage} elevation={8}>
-                <img src={infinity} className={classes.image} />
-              </Card>
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={bandera} className={classes.image} />
-              </Card>
-        
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={heatherMaple} className={classes.image} />
+            </Card>
+            <Card className={classes.middleImage} elevation={8}>
+              <img src={infinity} className={classes.image} />
+            </Card>
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={bandera} className={classes.image} />
+            </Card>
 
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={highRock2} className={classes.image} />
-              </Card>
-              <Card className={classes.middleImage} elevation={8}>
-                <img src={highRock3} className={classes.image} />
-              </Card>
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={highRock1} className={classes.image} />
-              </Card>
 
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={rattle1} className={classes.image} />
-              </Card>
-              <Card className={classes.middleImage} elevation={8}>
-                <img src={melawka1} className={classes.image} />
-              </Card>
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={rattle2} className={classes.image} />
-              </Card>
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={highRock2} className={classes.image} />
+            </Card>
+            <Card className={classes.middleImage} elevation={8}>
+              <img src={highRock3} className={classes.image} />
+            </Card>
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={highRock1} className={classes.image} />
+            </Card>
 
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={snowlake1} className={classes.image} />
-              </Card>
-              <Card className={classes.middleImage} elevation={8}>
-                <img src={tunnel1} className={classes.image} />
-              </Card>
-              <Card className={classes.smallImage} elevation={8}>
-                <img src={snowlake2} className={classes.image} />
-              </Card>
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={rattle1} className={classes.image} />
+            </Card>
+            <Card className={classes.middleImage} elevation={8}>
+              <img src={melawka1} className={classes.image} />
+            </Card>
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={rattle2} className={classes.image} />
+            </Card>
+
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={snowlake1} className={classes.image} />
+            </Card>
+            <Card className={classes.middleImage} elevation={8}>
+              <img src={tunnel1} className={classes.image} />
+            </Card>
+            <Card className={classes.smallImage} elevation={8}>
+              <img src={snowlake2} className={classes.image} />
+            </Card>
 
 
           </Grid>
