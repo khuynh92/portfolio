@@ -65,6 +65,12 @@ class About extends Component {
   showResume = () => {
     this.setState({ resume: !this.state.resume });
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ resume: !this.state.resume });
+    }, 3000);
+  }
   render() {
     const { classes } = this.props;
     return (

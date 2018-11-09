@@ -6,6 +6,7 @@ import chewsitGif from '../assets/chewsitGif.gif';
 import weightedRandomizerGif from '../assets/weightedRandomizerGif.gif';
 import chewsit1p0Gif from '../assets/chewsit1p0Gif.gif';
 import simpleServerGif from '../assets/simpleServerGif.gif';
+import etapGif from '../assets/etapGif.gif';
 
 const styles = theme => {
   theme.breakpoints.values.sm = 480;
@@ -153,14 +154,14 @@ const styles = theme => {
       margin: 'auto',
       textAlign: 'center',
     },
-    chewsit1p0Card: {
+    etapCard: {
       [theme.breakpoints.between('xs', 'sm')]: {
         width: '100%',
         margin: 'auto',
         marginBottom: 25,
       },
       marginLeft: 20,
-      backgroundColor: '#252931',
+      backgroundColor: '#60783A',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -170,14 +171,14 @@ const styles = theme => {
       height: '100%',
       cursor: 'pointer',
     },
-    chewsit1p0FadeCard: {
+    etapFadeCard: {
       [theme.breakpoints.between('xs', 'sm')]: {
         width: '100%',
         margin: 'auto',
         marginBottom: 25,
       },
       marginLeft: 20,
-      backgroundColor: '#252931',
+      backgroundColor: '#60783A',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -187,9 +188,7 @@ const styles = theme => {
       height: '100%',
       cursor: 'pointer',
     },
-    chewsit1p0Text: {
-      letterSpacing: 1.5,
-      fontFamily: 'Titan One',
+    etapText: {
       color: '#ECEBE3',
       fontWeight: 'bold',
       fontSize: '2.5rem',
@@ -223,7 +222,7 @@ class Dashboard extends Component {
 
   state = {
     chewsit: false,
-    chewsit1p0: false,
+    etap: false,
     simpleServer: false,
     weightedRandomizer: false,
   }
@@ -237,14 +236,16 @@ class Dashboard extends Component {
   }
 
   cardClicked = (card) => {
-    if(card === 'chewsit') window.location.href = 'https://chewsit.site';
+    if (card === 'chewsit') window.location.href = 'https://chewsit.site';
 
-    if(card === 'weightedRandomizer') window.location.href = 'https://www.npmjs.com/package/@icantbelieveitsnotrandom/weighted-randomizer';
+    if (card === 'weightedRandomizer') window.location.href = 'https://www.npmjs.com/package/@icantbelieveitsnotrandom/weighted-randomizer';
 
-    if(card === 'simpleServer') window.location.href = 'https://github.com/khuynh92/simple-auth';
+    if (card === 'simpleServer') window.location.href = 'https://github.com/khuynh92/simple-auth';
 
-    if (card=== 'chewsit1p0') window.location.href = 'https://khuynh92.github.io/chewsit/';
+    if (card === 'etap') window.location.href = 'https://sgc2018-etap-web.herokuapp.com/';
   }
+
+ 
 
   render() {
     const { classes } = this.props;
@@ -293,14 +294,14 @@ class Dashboard extends Component {
                 </Card>
               </Fade>
 
-              <Fade in={!this.state.chewsit1p0} timeout={800}>
-                <Card className={!this.state.chewsit1p0 ? classes.chewsit1p0Card : classes.none} onMouseEnter={() => this.onHover('chewsit1p0')} onMouseLeave={() => this.onExit('chewsit1p0')} onClick={() => this.cardClicked('chewsit1p0')} >
-                  <Typography variant='h3' className={classes.chewsit1p0Text}>chewsit <br /> <span style={{ fontFamily: 'Titan One', fontSize: 28 }}>1.0</span></Typography>
+              <Fade in={!this.state.etap} timeout={800}>
+                <Card className={!this.state.etap ? classes.etapCard : classes.none} onMouseEnter={() => this.onHover('etap')} onMouseLeave={() => this.onExit('etap')} onClick={() => this.cardClicked('etap')} >
+                  <Typography variant='h3' className={classes.etapText}>Electronic ETAP</Typography>
                 </Card>
               </Fade>
-              <Fade in={this.state.chewsit1p0} timeout={800}>
-                <Card className={this.state.chewsit1p0 ? classes.chewsit1p0FadeCard : classes.none} onMouseEnter={() => this.onHover('chewsit1p0')} onMouseLeave={() => this.onExit('chewsit1p0')} onClick={() => this.cardClicked('chewsit1p0')} >
-                  <img src={chewsit1p0Gif} style={{ width: '100%' }} />
+              <Fade in={this.state.etap} timeout={800}>
+                <Card className={this.state.etap ? classes.etapFadeCard : classes.none} onMouseEnter={() => this.onHover('etap')} onMouseLeave={() => this.onExit('etap')} onClick={() => this.cardClicked('etap')} >
+                  <img src={etapGif} style={{ height: '95%', borderRadius: 5 }} />
                 </Card>
               </Fade>
             </div>
