@@ -93,9 +93,9 @@ class Resume extends Component {
 
         <Typography variant='body2' className={classes.headlineText}>Technical Skills</Typography>
         <Typography variant='body2' className={classes.bodyText}><strong>Languages: </strong>JavaScript, HTML5, CSS3</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Tools: </strong>Git, iTerm2, zsh, Github, Visual Studio Code, Jest, Wallaby, Heroku, SQL & NoSQL databases</Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>Tools: </strong> Git, iTerm2, zsh, Github, Visual Studio, Jest, Wallaby, Heroku</Typography>
         <Typography variant='body2' className={classes.bodyText}><strong>Operating Tools: </strong>OS X, Windows , and Linux</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Proficiencies: </strong>React.js, Redux.js, jQuery, Node.js, Express.js, MongoDB, PostgreSQL, Material-UI, Responsive-Web Design, Functional Programming, Test/Behavior Driven Development, Data Structures and Algorithms, Scalable and Modular Architecture for CSS (SMACSS), SCSS, Model View Controller (MVC) Architecture, Async Design Patterns, Object-Oriented Programming, Agile product development style</Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>Proficiencies: </strong>React.js, Redux, jQuery, Node.js, Express.js, MongoDB, PostgreSQL, SQL, NoSQL, Webpack, Material UI, Responsive-Web Design, Functional Programming, Test/Behavior Driven Development, Data Structures and Algorithms, Scalable and Modular Architecture for CSS (SMACSS), SCSS, Model View Controller (MVC) Architecture, Async Design Patterns, Object-Oriented Programming, Agile product development style</Typography>
 
         <Typography variant='body2' className={classes.headlineText}>Projects</Typography>
         <Typography variant='body2' className={classes.bodyText}><strong>Chewsit 3.0 | Oct 2018 | <a href='https://chewsit.site' target='_blank' rel='noopener noreferrer'>https://chewsit.site</a></strong></Typography>
@@ -103,6 +103,13 @@ class Resume extends Component {
         <li className={classes.listItem}>Individual project that is a rework of chewsit</li>
         <li className={classes.listItem}>Utilizes React, Redux, Material UI, MongoDB, Express, Google Maps API, and Yelp API</li>
         <li className={classes.listItem}>Integrates OAuth and basic/bearer auth</li>
+        
+        <Typography variant='body2' className={classes.bodyText}><strong>Electronic ETAP | Oct 2018 | <a href='https://sgc2018-etap-web.herokuapp.com/' target='_blank' rel='noopener noreferrer'>https://sgc2018-etap-web.herokuapp.com/</a></strong></Typography>
+        <Typography variant='body2' className={classes.bodyText}>A proof of concept web application designed for Zero Waste Washington. This mobile-first web app will be the prototype to transition from the current data collection system to a paperless design. Will first be tested in Washington, and then rolled out nationwide.</Typography>
+        <li className={classes.listItem}>Built during Seattle GiveCamp 2018</li>
+        <li className={classes.listItem}>Utilizes JavaScript, MongoDB (NoSQL), Express.js, React.js, Redux, and Node.js</li>
+        <li className={classes.listItem}>Lead and mentored the front end team</li>
+
         <Typography variant='body2' className={classes.bodyText}><strong>Weighted Randomizer | Sep 2018 | <a href='https://goo.gl/Yu9wmY' target='_blank' rel='noopener noreferrer'>goo.gl/Yu9wmY</a></strong></Typography>
         <Typography variant='body2' className={classes.bodyText}>Customizable weight randomization function for arrays, published on npm.</Typography>
         <li className={classes.listItem}>Test driven development using jest</li>
