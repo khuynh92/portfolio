@@ -30,15 +30,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khuynh92/chewsit-client.git"
+    "url": "git+https://github.com/khuynh92/profile.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/khuynh92/chewsit-client/issues"
+    "url": "https://github.com/khuynh92/profile/issues"
   },
-  "homepage": "https://khuynh92.github.io",
+  "homepage": "https://khuynh92.github.io/profile",
   "devDependencies": {
     "@material-ui/core": "^3.0.2",
     "@material-ui/icons": "^3.0.1",
