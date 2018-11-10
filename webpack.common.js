@@ -15,6 +15,8 @@ webpackConfig.output = {
   filename: '[name].[hash].js',
   path: `${__dirname}/build`,
   publicPath: `/profile/`,
+  // publicPath: `/`,
+
 };
 
 webpackConfig.plugins = [

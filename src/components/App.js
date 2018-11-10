@@ -15,8 +15,8 @@ export default class App extends Component {
           <Navbar />
           <Route exact path='/' component={Dashboard} />
           <Route path='/about' component={About}/>
-          {/* <Route path='/projects' component={Projects}/> */}
-          <Route path='/projects' component={Dashboard}/>
+          <Route path='/projects' component={Projects}/>
+          {/* <Route path='/projects' component={Dashboard}/> */}
           <Route path='/photos' component={Photos}/>
 
         </React.Fragment>

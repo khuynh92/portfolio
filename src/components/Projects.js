@@ -1,280 +1,50 @@
 import React, { Component, Fragment } from 'react';
-import { withStyles, Card, Grid, Typography, Paper, Button, Collapse } from '@material-ui/core';
+import { withStyles, Card, Grid, Typography, Collapse, Button, List, ListItem } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
-
-import { ChevronDoubleLeft, ChevronDoubleRight } from 'mdi-material-ui';
-
 
 import chewsitGif from '../assets/chewsitGif.gif';
 import weightedRandomizerGif from '../assets/weightedRandomizerGif.gif';
 import chewsit1p0Gif from '../assets/chewsit1p0Gif.gif';
 import simpleServerGif from '../assets/simpleServerGif.gif';
+import etapGif from '../assets/etapGif.gif';
+import { styles } from '../style/projectStyles.js';
 
-const styles = theme => {
-  theme.breakpoints.values.sm = 480;
-  theme.breakpoints.values.md = 768;
-  theme.breakpoints.values.lg = 1024;
-  return {
-    container: {
-      width: '90vw',
-      height: '70vh',
-      display: 'flex',
-      margin: 'auto',
-    },
-    helperText: {
-      width: '100%',
-      textAlign: 'center',
-      marginBottom: 10,
-    },
-    card: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-
-      backgroundColor: '#337A89',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    secondCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#337A89',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    cardContainer: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        flexDirection: 'column',
-        margin: 'auto',
-        marginBottom: 0,
-        width: '100%',
-        height: '90%',
-        minHeight: 450,
-      },
-      justifyContent: 'center',
-      boxShadow: 'none',
-      display: 'flex',
-      flexDirection: 'row',
-      margin: 'auto',
-      width: '100%',
-      height: '55%',
-      maxHeight: 325,
-      marginBottom: 40,
-    },
-    chewsitCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      float: 'left',
-      backgroundColor: '#D36F75',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    chewsitText: {
-      fontFamily: 'Oleo Script Swash Caps',
-      color: '#ECEBE3',
-      fontSize: '4rem',
-    },
-    chewsitFadeCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#ECEBE3',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    weightedRandomizerCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#3f51b5',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    weightedRandomizerFadeCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#ffffff',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    weightedRandomizerText: {
-      paddingLeft: 10,
-      paddingRight: 10,
-      color: '#ECEBE3',
-      fontWeight: 'bold',
-      fontSize: '2.5rem',
-      margin: 'auto',
-      textAlign: 'center',
-    },
-    chewsit1p0Card: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#252931',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    chewsit1p0FadeCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#252931',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    chewsit1p0Text: {
-      letterSpacing: 1.5,
-      fontFamily: 'Titan One',
-      color: '#ECEBE3',
-      fontWeight: 'bold',
-      fontSize: '2.5rem',
-      margin: 'auto',
-      textAlign: 'center',
-    },
-    simpleServerFadeCard: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        width: '100%',
-        margin: 'auto',
-        marginBottom: 25,
-      },
-      backgroundColor: '#ffffff',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%',
-      maxWidth: 400,
-      height: '100%',
-      cursor: 'pointer',
-    },
-    none: {
-      display: 'none',
-    },
-    verticalText: {
-      writingMode: 'vertical-rl',
-      textOrientation: 'upright',
-    },
-    expandButton: {
-      marginLeft: -15,
-      width: '100%',
-      height: '100%',
-    },
-    expandCard: {
-      width: '40%',
-    },
-    expandCardContainer: {
-      [theme.breakpoints.between('xs', 'sm')]: {
-        flexDirection: 'column',
-        margin: 'auto',
-        marginBottom: 0,
-        width: '100%',
-        height: '90%',
-        minHeight: 450,
-      },
-      margin: 'auto',
-      width: '100%',
-      height: '55%',
-      maxHeight: 325,
-      marginBottom: 40,
-      maxWidth: 940,
-    },
-  };
-
-};
-
+import { ChevronUp, ChevronDown } from 'mdi-material-ui';
 
 class Projects extends Component {
 
   state = {
     chewsit: false,
-    chewsit1p0: false,
+    etap: false,
     simpleServer: false,
     weightedRandomizer: false,
-    expandChewsit: true,
-    expandChewsit1p0: true,
-    expandSimpleServer: true,
-    expandWeightedRandomizer: true,
+    expandchewsit: false,
+    expandweightedRandomizer: false,
+    expandsimpleServer: false,
+    expandetap: false,
   }
 
   onHover = (card) => {
-    this.setState({ [card]: true });
+    // this.setState({ [card]: true });
   }
 
   onExit = (card) => {
-    this.setState({ [card]: false });
+    // this.setState({ [card]: false });
   }
 
   cardClicked = (card) => {
-    this.setState({ [card]: true });
+    if (card === 'chewsit') window.location.href = 'https://chewsit.site';
+
+    if (card === 'weightedRandomizer') window.location.href = 'https://www.npmjs.com/package/@icantbelieveitsnotrandom/weighted-randomizer';
+
+    if (card === 'simpleServer') window.location.href = 'https://github.com/khuynh92/simple-auth';
+
+    if (card === 'etap') window.location.href = 'https://sgc2018-etap-web.herokuapp.com/';
   }
 
+  expand = (card) => {
+    this.setState({ [card]: !this.state[card], ['expand' + card]: !this.state['expand' + card] });
+  }
   render() {
     const { classes } = this.props;
     return (
@@ -284,189 +54,145 @@ class Projects extends Component {
             container
             className={classes.container}
           >
+            <Typography className={classes.helperText} variant='overline'>Hover over a card to preview project. Click to view project.</Typography>
 
-            <Paper className={this.state.expandChewsit ? classes.expandCardContainer : classes.cardContainer}>
-              <Fade in={!this.state.chewsit} timeout={800}>
-                <Card className={!this.state.chewsit ? classes.chewsitCard : classes.none} onMouseEnter={() => this.onHover('chewsit')} >
-                  <Typography variant='h3' className={classes.chewsitText}>chewsit</Typography>
-                </Card>
-              </Fade>
-              <Fade in={this.state.chewsit} timeout={800}>
-                <Card className={this.state.chewsit ? classes.chewsitFadeCard : classes.none} onMouseLeave={() => this.onExit('chewsit')} >
-                  <img src={chewsitGif} style={{ width: '100%' }} />
-                </Card>
-              </Fade>
-              {
-                !this.state.expandChewsit
-                && <Card style={{ width: 30 }}>
-                  <Button className={classes.expandButton} onClick={() => this.cardClicked('expandChewsit')} >
-                    <div>
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <Typography variant='overline' className={classes.verticalText}>
-                        Expand
-                      </Typography>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                    </div>
-                  </Button>
-                </Card>
-              }
-              {
-                this.state.expandChewsit &&
-                <div style={{ width: '100%' }}>
-                  {/* <div style={{width: '80%', margin: 'auto'}}> */}
-                  <div>
-                    <Typography variant='h6' style={{ textAlign: 'center', paddingTop: 10 }}>
-                      <a href='https://chewsit.site' target='_blank' rel='noopener noreferrer'>https://chewsit.site</a>
-                    </Typography>
-                   
+            <div className={classes.cardContainer}>
+              <Collapse in={this.state.expandchewsit} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+                <Card className={classes.innerCardContainer}>
+                  <Fade in={!this.state.chewsit} timeout={800}>
+                    <Card className={!this.state.chewsit ? classes.chewsitCard : classes.none} onMouseEnter={() => this.onHover('chewsit')} onClick={() => this.cardClicked('chewsit')} >
+                      <Typography variant='h3' className={classes.chewsitText}>chewsit</Typography>
+                    </Card>
+                  </Fade>
+                  <Fade in={this.state.chewsit} timeout={800}>
+                    <Card className={this.state.chewsit ? classes.chewsitFadeCard : classes.none} onMouseLeave={() => this.onExit('chewsit')} onClick={() => this.cardClicked('chewsit')} >
+                      <img src={chewsitGif} style={{ width: '100%', marginBottom: 20 }} />
+                    </Card>
+                  </Fade>
+                  {!this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronDown />expand<ChevronDown /></Button>}
+                  <div className={classes.infoDiv}>
+                    <Typography variant='h5'><u>chewsit</u></Typography>
+                    <Typography variant='body2' style={{ textIdent: 20 }}>A simplified restaurant discovery website. Designed to help users decide where to eat quickly by minimizing the amount of distractors on screen. With chewsit, you have the option to set food preferences. You also have the option to save favorite restaurants. Review or Edit your favorite restaurants anytime by going to the menu.</Typography>
+                    <br />
+                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
+                    <ul className={classes.ul}>
+                      <li className={classes.li}>JavaScript</li>
+                      <li className={classes.li}>React.js</li>
+                      <li className={classes.li}>Redux</li>
+                      <li className={classes.li}>MongoDB (NoSQL)</li>
+                      <li className={classes.li}>Node.js</li>
+                      <li className={classes.li}>Express.js</li>
+                      <li className={classes.li}>Material UI</li>
+                      <li className={classes.li}>OAuth 2</li>
+                      <li className={classes.li}>Google Maps API</li>
+                      <li className={classes.li}>Yelp Fusion API</li>
+                    </ul>
                   </div>
-                  <Typography variant='body2'>
-                    Chewsit is a simplified food discovery website that helps users decide where to eat. Users can set preferences for types of food that they enjoy, and also save favorite restaurants. Guests are allowed to try the application with limited access
-                  </Typography>
-                  <Typography variant='body1'><strong>Technologies Used:</strong></Typography>
-                  <ul>
-                    <li>React.js</li>
-                    <li>Redux.js</li>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>MongoDb</li>
-                    <li>Material UI</li>
-                    <li>OAuth2.0</li>
-             
-                  </ul>
-                  {/* </div> */}
-                </div>
-              }
-            </Paper>
+                  {this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronUp />close<ChevronUp /></Button>}
+                </Card>
+              </Collapse>
 
-            <Paper className={this.state.expandWeightedRandomizer ? classes.expandCardContainer : classes.cardContainer}>
-              <Fade in={!this.state.weightedRandomizer} timeout={800}>
-                <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} >
-                  <Typography variant='h3' className={classes.weightedRandomizerText}>Weighted Randomizer</Typography>
+              <Collapse in={this.state.expandsimpleServer} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+                <Card className={classes.innerCardContainer}>
+                  <Fade in={!this.state.simpleServer} timeout={800}>
+                    <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
+                      <Typography variant='h3' className={classes.weightedRandomizerText}>Simple Server</Typography>
+                    </Card>
+                  </Fade>
+                  <Fade in={this.state.simpleServer} timeout={800}>
+                    <Card className={this.state.simpleServer ? classes.simpleServerFadeCard : classes.none} onMouseLeave={() => this.onExit('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
+                      <img src={simpleServerGif} style={{ width: '100%', marginBottom: 20 }} />
+                    </Card>
+                  </Fade>
+                  {!this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronDown />expand<ChevronDown /></Button>}
+                  <div className={classes.infoDiv}>
+                    <Typography variant='h5'><u>Simple Server</u></Typography>
+                    <Typography variant='body2' style={{ textIdent: 20 }}>An easy to start up Node.js back end server. Provides basic/bearer authentication and route protection. Allows additional MongoDB models to be implemented. This server also utilizes Role Based Access Control, which can be utilized on the front end client.
+                    </Typography>
+                    <br />
+                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
+                    <ul className={classes.ul}>
+                      <li className={classes.li}>JavaScript</li>
+                      <li className={classes.li}>Node.js</li>
+                      <li className={classes.li}>Express.js</li>
+                      <li className={classes.li}>MongoDB (NoSQL)</li>
+                      <li className={classes.li}>Role Based Access Control</li>
+                    </ul>
+                  </div>
+                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
-              </Fade>
-              <Fade in={this.state.weightedRandomizer} timeout={800}>
-                <Card className={this.state.weightedRandomizer ? classes.weightedRandomizerFadeCard : classes.none} onMouseLeave={() => this.onExit('weightedRandomizer')}>
-                  <img src={weightedRandomizerGif} style={{ width: '100%' }} />
-                </Card>
-              </Fade>
-              {
-                !this.state.expandWeightedRandomizer
-                && <Card style={{ width: 30 }}>
-                  <Button className={classes.expandButton} onClick={() => this.cardClicked('expandWeightedRandomizer')} >
-                    <div>
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <Typography variant='overline' className={classes.verticalText}>
-                        Expand
-                      </Typography>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                    </div>
-                  </Button>
-                </Card>
-              }
-            </Paper>
+              </Collapse>
+            </div>
 
-            <Paper className={this.state.expandSimpleServer ? classes.expandCardContainer : classes.cardContainer}>
-              <Fade in={!this.state.simpleServer} timeout={800}>
-                <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} >
-                  <Typography variant='h3' className={classes.weightedRandomizerText}>Simple Server</Typography>
+            <div className={classes.cardContainer}>
+              <Collapse in={this.state.expandweightedRandomizer} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+                <Card className={classes.innerCardContainer}>
+                  <Fade in={!this.state.weightedRandomizer} timeout={800}>
+                    <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
+                      <Typography variant='h3' className={classes.weightedRandomizerText}>Weighted Randomizer</Typography>
+                    </Card>
+                  </Fade>
+                  <Fade in={this.state.weightedRandomizer} timeout={800}>
+                    <Card className={this.state.weightedRandomizer ? classes.weightedRandomizerFadeCard : classes.none} onMouseLeave={() => this.onExit('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
+                      <img src={weightedRandomizerGif} style={{ width: '100%', marginBottom: 20 }} />
+                    </Card>
+                  </Fade>
+                  {!this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronDown />expand<ChevronDown /></Button>}
+                  <div className={classes.infoDiv}>
+                    <Typography variant='h5'><u>Weighted Randomizer</u></Typography>
+                    <Typography variant='body2' style={{ textIdent: 20 }}>Customizable weight randomization function for arrays, published on npm. Users have the option to user a single array, or multiple arrays, depending on how they want to structure their data.</Typography>
+                    <br />
+                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
+                    <ul className={classes.ul}>
+                      <li className={classes.li}>JavaScript</li>
+                      <li className={classes.li}>React.js</li>
+                      <li className={classes.li}>Material UI</li>
+                    </ul>
+                  </div>
+                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
-              </Fade>
-              <Fade in={this.state.simpleServer} timeout={800}>
-                <Card className={this.state.simpleServer ? classes.simpleServerFadeCard : classes.none} onMouseLeave={() => this.onExit('simpleServer')}>
-                  <img src={simpleServerGif} style={{ width: '100%' }} />
-                </Card>
-              </Fade>
-              {
-                !this.state.expandSimpleServer
-                && <Card style={{ width: 30 }}>
-                  <Button className={classes.expandButton} onClick={() => this.cardClicked('expandSimpleServer')} >
-                    <div>
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <Typography variant='overline' className={classes.verticalText}>
-                        Expand
-                      </Typography>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                    </div>
-                  </Button>
-                </Card>
-              }
-            </Paper>
+              </Collapse>
 
-            <Paper className={this.state.expandChewsit1p0 ? classes.expandCardContainer : classes.cardContainer}>
-              <Fade in={!this.state.chewsit1p0} timeout={800}>
-                <Card className={!this.state.chewsit1p0 ? classes.chewsit1p0Card : classes.none} onMouseEnter={() => this.onHover('chewsit1p0')} onMouseLeave={() => this.onExit('chewsit1p0')}>
-                  <Typography variant='h3' className={classes.chewsit1p0Text}>chewsit <br /> <span style={{ fontFamily: 'Titan One', fontSize: 28 }}>1.0</span></Typography>
+              <Collapse in={this.state.expandetap} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+                <Card className={classes.innerCardContainer}>
+                  <Fade in={!this.state.etap} timeout={800}>
+                    <Card className={!this.state.etap ? classes.etapCard : classes.none} onMouseEnter={() => this.onHover('etap')} onMouseLeave={() => this.onExit('etap')} onClick={() => this.cardClicked('etap')} >
+                      <Typography variant='h3' className={classes.etapText}>Electronic ETAP</Typography>
+                    </Card>
+                  </Fade>
+                  <Fade in={this.state.etap} timeout={800}>
+                    <Card className={this.state.etap ? classes.etapFadeCard : classes.none} onMouseEnter={() => this.onHover('etap')} onMouseLeave={() => this.onExit('etap')} onClick={() => this.cardClicked('etap')} >
+                      <img src={etapGif} style={{ height: '95%', borderRadius: 5 }} />
+                    </Card>
+                  </Fade>
+                  {!this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronDown />expand<ChevronDown /></Button>}
+                  <div className={classes.infoDiv}>
+                    <Typography variant='h5'><u>Electronic ETAP</u></Typography>
+                    <Typography variant='body2' style={{ textIdent: 20 }}>Electronic Escaped Trash Assessment Protocol (Electronic ETAP) is a proof of concept web application designed for Zero Waste Washington and the United States  Environmental Protection Agency. This mobile-first web app will be the prototype to transition from the current data collection system to a paperless design. Electronic ETAP Will first be tested in Washington, and then rolled out nationwide.
+                    </Typography>
+                    <br />
+                    <Typography variant='body2' style={{ textIdent: 20 }}>Electronic ETAP was create from the ground up over a 2 day period at Seattle Givecamp 2018
+                    </Typography>
+                    <br />
+                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
+                    <ul className={classes.ul}>
+                      <li className={classes.li}>JavaScript</li>
+                      <li className={classes.li}>React.js</li>
+                      <li className={classes.li}>Redux</li>
+                      <li className={classes.li}>MongoDB (NoSQL)</li>
+                      <li className={classes.li}>Node.js</li>
+                      <li className={classes.li}>Express.js</li>
+                      <li className={classes.li}>Material UI</li>
+                    </ul>
+                  </div>
+                  {this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
-              </Fade>
-              <Fade in={this.state.chewsit1p0} timeout={800}>
-                <Card className={this.state.chewsit1p0 ? classes.chewsit1p0FadeCard : classes.none} onMouseEnter={() => this.onHover('chewsit1p0')} onMouseLeave={() => this.onExit('chewsit1p0')}>
-                  <img src={chewsit1p0Gif} style={{ width: '100%' }} />
-                </Card>
-              </Fade>
-              {
-                !this.state.expandChewsit1p0
-                && <Card style={{ width: 30 }}>
-                  <Button className={classes.expandButton} onClick={() => this.cardClicked('expandChewsit1p0')} >
-                    <div>
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <Typography variant='overline' className={classes.verticalText}>
-                        Expand
-                      </Typography>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <ChevronDoubleRight style={{ alignSelf: 'flex-start', justifySelf: 'flex-start' }} />
-                    </div>
-                  </Button>
-                </Card>
-              }
-            </Paper>
+              </Collapse>
 
+            </div>
           </Grid>
         </Fade>
-      </Fragment>
+      </Fragment >
     );
   }
 
