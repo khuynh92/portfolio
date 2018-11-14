@@ -42,8 +42,23 @@ class Projects extends Component {
     if (card === 'etap') window.location.href = 'https://sgc2018-etap-web.herokuapp.com/';
   }
 
-  expand = (card) => {
+  expand = async (card) => {
+    let newState = { ...this.state };
+    let newStateArray = Object.keys(newState);
+
+    newStateArray.forEach(element => newState[element] = false);
+
+    await this.setState(newState);
     this.setState({ [card]: !this.state[card], ['expand' + card]: !this.state['expand' + card] });
+  }
+
+  close = () => {
+    let newState = { ...this.state };
+    let newStateArray = Object.keys(newState);
+
+    newStateArray.forEach(element => newState[element] = false);
+
+    this.setState(newState);
   }
   render() {
     const { classes } = this.props;
@@ -54,7 +69,7 @@ class Projects extends Component {
             container
             className={classes.container}
           >
-            <Typography className={classes.helperText} variant='overline'>Hover over a card to preview project. Click to view project.</Typography>
+            <Typography className={classes.helperText} variant='overline'>Click on EXPAND for details. Click on the Logo/Image to visit project.</Typography>
 
             <div className={classes.cardContainer}>
               <Collapse in={this.state.expandchewsit} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
@@ -88,7 +103,7 @@ class Projects extends Component {
                       <li className={classes.li}>Yelp Fusion API</li>
                     </ul>
                   </div>
-                  {this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandchewsit && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
@@ -119,7 +134,7 @@ class Projects extends Component {
                       <li className={classes.li}>Role Based Access Control</li>
                     </ul>
                   </div>
-                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandsimpleServer && <Button className={this.close} onClick={() => this.expand('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
             </div>
@@ -149,7 +164,7 @@ class Projects extends Component {
                       <li className={classes.li}>Material UI</li>
                     </ul>
                   </div>
-                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
@@ -185,7 +200,7 @@ class Projects extends Component {
                       <li className={classes.li}>Material UI</li>
                     </ul>
                   </div>
-                  {this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandetap && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
