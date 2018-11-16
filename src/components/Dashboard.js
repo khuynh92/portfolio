@@ -259,6 +259,7 @@ class Dashboard extends Component {
             <Typography className={classes.helperText} variant='overline'>Hover over a card to preview project. Click to view project.</Typography>
 
             <div className={classes.cardContainer}>
+
               <Fade in={!this.state.chewsit} timeout={800}>
                 <Card className={!this.state.chewsit ? classes.chewsitCard : classes.none} onMouseEnter={() => this.onHover('chewsit')} onClick={() => this.cardClicked('chewsit')} >
                   <Typography variant='h3' className={classes.chewsitText}>chewsit</Typography>
@@ -267,30 +268,6 @@ class Dashboard extends Component {
               <Fade in={this.state.chewsit} timeout={800}>
                 <Card className={this.state.chewsit ? classes.chewsitFadeCard : classes.none} onMouseLeave={() => this.onExit('chewsit')} onClick={() => this.cardClicked('chewsit')} >
                   <img src={chewsitGif} style={{ width: '100%' }} />
-                </Card>
-              </Fade>
-
-              <Fade in={!this.state.weightedRandomizer} timeout={800}>
-                <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
-                  <Typography variant='h3' className={classes.weightedRandomizerText}>Weighted Randomizer</Typography>
-                </Card>
-              </Fade>
-              <Fade in={this.state.weightedRandomizer} timeout={800}>
-                <Card className={this.state.weightedRandomizer ? classes.weightedRandomizerFadeCard : classes.none} onMouseLeave={() => this.onExit('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
-                  <img src={weightedRandomizerGif} style={{ width: '100%' }} />
-                </Card>
-              </Fade>
-            </div>
-
-            <div className={classes.cardContainer}>
-              <Fade in={!this.state.simpleServer} timeout={800}>
-                <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
-                  <Typography variant='h3' className={classes.weightedRandomizerText}>Simple Server</Typography>
-                </Card>
-              </Fade>
-              <Fade in={this.state.simpleServer} timeout={800}>
-                <Card className={this.state.simpleServer ? classes.simpleServerFadeCard : classes.none} onMouseLeave={() => this.onExit('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
-                  <img src={simpleServerGif} style={{ width: '100%' }} />
                 </Card>
               </Fade>
 
@@ -304,6 +281,33 @@ class Dashboard extends Component {
                   <img src={etapGif} style={{ height: '95%', borderRadius: 5 }} />
                 </Card>
               </Fade>
+
+            </div>
+
+            <div className={classes.cardContainer}>
+            
+              <Fade in={!this.state.simpleServer} timeout={800}>
+                <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
+                  <Typography variant='h3' className={classes.weightedRandomizerText}>Simple Server</Typography>
+                </Card>
+              </Fade>
+              <Fade in={this.state.simpleServer} timeout={800}>
+                <Card className={this.state.simpleServer ? classes.simpleServerFadeCard : classes.none} onMouseLeave={() => this.onExit('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
+                  <img src={simpleServerGif} style={{ width: '100%' }} />
+                </Card>
+              </Fade>
+
+              <Fade in={!this.state.weightedRandomizer} timeout={800}>
+                <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
+                  <Typography variant='h3' className={classes.weightedRandomizerText}>Weighted Randomizer</Typography>
+                </Card>
+              </Fade>
+              <Fade in={this.state.weightedRandomizer} timeout={800}>
+                <Card className={this.state.weightedRandomizer ? classes.weightedRandomizerFadeCard : classes.none} onMouseLeave={() => this.onExit('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
+                  <img src={weightedRandomizerGif} style={{ width: '100%' }} />
+                </Card>
+              </Fade>
+
             </div>
           </Grid>
         </Fade>
