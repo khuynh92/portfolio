@@ -1,15 +1,24 @@
 export const styles = theme => {
   theme.breakpoints.values.sm = 480;
-  theme.breakpoints.values.md = 768;
+  theme.breakpoints.values.md = 830;
   theme.breakpoints.values.lg = 1024;
   return {
     container: {
-      width: '90vw',
-      // height: '70vh',
+      [theme.breakpoints.between('xs', 'md')]: {
+        width: '100vw',
+        flexDirection: 'column',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        justifyContent: 'center',
+      },
+      [theme.breakpoints.up('md')]: {
+        width: '100vw',
+        flexDirection: 'row',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      },
+      maxWidth: '825px',
       display: 'flex',
-      flexDirection: 'row',
-      marginLeft: 'auto',
-      marginRight: 'auto',
     },
     helperText: {
       width: '100%',
@@ -21,7 +30,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
 
       backgroundColor: '#337A89',
@@ -40,7 +49,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#337A89',
       display: 'flex',
@@ -61,6 +70,8 @@ export const styles = theme => {
         marginBottom: 0,
         // height: '90%',
         minHeight: 650,
+        width: '90%',
+
       },
       display: 'flex',
       alignItems: 'center',
@@ -75,7 +86,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#D36F75',
       display: 'flex',
@@ -98,7 +109,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#ECEBE3',
       display: 'flex',
@@ -116,7 +127,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#3f51b5',
       display: 'flex',
@@ -134,7 +145,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#ffffff',
       display: 'flex',
@@ -162,7 +173,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#60783A',
       display: 'flex',
@@ -180,7 +191,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#60783A',
       display: 'flex',
@@ -205,7 +216,7 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 25,
+        // marginBottom: 25,
       },
       backgroundColor: '#ffffff',
       display: 'flex',
@@ -222,16 +233,18 @@ export const styles = theme => {
       display: 'none',
     },
     infoDiv: {
-      marginTop: 10,
+      marginTop: 30,
       marginLeft: 20,
       paddingRight: 20,
     },
     innerCardContainer: {
-      width: '85%',
+      width: '100%',
       margin: 'auto',
       maxWidth: 390,
     },
     expandButton: {
+      borderRadius: 0,
+      backgroundColor: 'rgb(240, 240, 240)',
       width: '100%',
     },
     ul: {

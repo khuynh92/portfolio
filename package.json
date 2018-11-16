@@ -30,15 +30,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khuynh92/profile.git"
+    "url": "git+https://github.com/khuynh92/portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/khuynh92/profile/issues"
+    "url": "https://github.com/khuynh92/portfolio/issues"
   },
-  "homepage": "https://khuynh92.github.io/profile",
+  "homepage": "https://khuynh92.github.io/portfolio",
   "devDependencies": {
     "@material-ui/core": "^3.0.2",
     "@material-ui/icons": "^3.0.1",

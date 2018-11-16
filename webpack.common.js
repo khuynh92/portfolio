@@ -14,8 +14,8 @@ webpackConfig.entry = ['babel-polyfill', `${__dirname}/src/main.js`];
 webpackConfig.output = {
   filename: '[name].[hash].js',
   path: `${__dirname}/build`,
-  publicPath: `/profile/`,
-  // publicPath: `/`,
+  // publicPath: `/portfolio/`,
+  publicPath: `/`,
 
 };
 

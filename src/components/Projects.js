@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { withStyles, Card, Grid, Typography, Collapse, Button, List, ListItem } from '@material-ui/core';
+import { withStyles, Card, Grid, Typography, Collapse, Button, Divider } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 
 import chewsitGif from '../assets/chewsitGif.gif';
 import weightedRandomizerGif from '../assets/weightedRandomizerGif.gif';
-import chewsit1p0Gif from '../assets/chewsit1p0Gif.gif';
 import simpleServerGif from '../assets/simpleServerGif.gif';
 import etapGif from '../assets/etapGif.gif';
 import { styles } from '../style/projectStyles.js';
@@ -24,22 +23,23 @@ class Projects extends Component {
     expandetap: false,
   }
 
-  onHover = (card) => {
+  onHover = () => {
     // this.setState({ [card]: true });
   }
 
-  onExit = (card) => {
+  onExit = () => {
     // this.setState({ [card]: false });
   }
 
-  cardClicked = (card) => {
-    if (card === 'chewsit') window.location.href = 'https://chewsit.site';
+  cardClicked = async (card) => {
+    
+    let newState = { ...this.state };
+    let newStateArray = Object.keys(newState);
 
-    if (card === 'weightedRandomizer') window.location.href = 'https://www.npmjs.com/package/@icantbelieveitsnotrandom/weighted-randomizer';
+    newStateArray.forEach(element => newState[element] = false);
 
-    if (card === 'simpleServer') window.location.href = 'https://github.com/khuynh92/simple-auth';
-
-    if (card === 'etap') window.location.href = 'https://sgc2018-etap-web.herokuapp.com/';
+    await this.setState(newState);
+    this.setState({ [card]: true, ['expand' + card]: true });
   }
 
   expand = (card) => {
@@ -57,7 +57,7 @@ class Projects extends Component {
             <Typography className={classes.helperText} variant='overline'>Hover over a card to preview project. Click to view project.</Typography>
 
             <div className={classes.cardContainer}>
-              <Collapse in={this.state.expandchewsit} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.expandchewsit} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.chewsit} timeout={800}>
                     <Card className={!this.state.chewsit ? classes.chewsitCard : classes.none} onMouseEnter={() => this.onHover('chewsit')} onClick={() => this.cardClicked('chewsit')} >
@@ -71,7 +71,12 @@ class Projects extends Component {
                   </Fade>
                   {!this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
-                    <Typography variant='h5'><u>chewsit</u></Typography>
+                    <Typography variant='h5'>chewsit</Typography>
+                    <Divider style={{ marginTop: 20 }} />
+                    <Typography variant='overline'><b>Deployed Link: </b><a href='https://chewsit.site/'>chewsit.site</a></Typography>
+                    <Divider />
+                    <Typography variant='overline'><b>GitHub: </b><a href='https://github.com/khuynh92/chewsit-client'>github.com/khuynh92/chewsit-client</a></Typography>
+                    <Divider style={{ marginBottom: 20 }} />
                     <Typography variant='body2' style={{ textIdent: 20 }}>A simplified restaurant discovery website. Designed to help users decide where to eat quickly by minimizing the amount of distractors on screen. With chewsit, you have the option to set food preferences. You also have the option to save favorite restaurants. Review or Edit your favorite restaurants anytime by going to the menu.</Typography>
                     <br />
                     <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
@@ -92,7 +97,7 @@ class Projects extends Component {
                 </Card>
               </Collapse>
 
-              <Collapse in={this.state.expandsimpleServer} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.expandsimpleServer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.simpleServer} timeout={800}>
                     <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
@@ -107,6 +112,10 @@ class Projects extends Component {
                   {!this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'><u>Simple Server</u></Typography>
+                    <Divider style={{ marginTop: 20 }} />
+                    <Divider />
+                    <Typography variant='overline'><b>GitHub: </b><a href='https://github.com/khuynh92/simple-auth'>github.com/khuynh92/simple-auth</a></Typography>
+                    <Divider style={{ marginBottom: 20 }} />
                     <Typography variant='body2' style={{ textIdent: 20 }}>An easy to start up Node.js back end server. Provides basic/bearer authentication and route protection. Allows additional MongoDB models to be implemented. This server also utilizes Role Based Access Control, which can be utilized on the front end client.
                     </Typography>
                     <br />
@@ -119,41 +128,14 @@ class Projects extends Component {
                       <li className={classes.li}>Role Based Access Control</li>
                     </ul>
                   </div>
-                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
             </div>
 
             <div className={classes.cardContainer}>
-              <Collapse in={this.state.expandweightedRandomizer} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
-                <Card className={classes.innerCardContainer}>
-                  <Fade in={!this.state.weightedRandomizer} timeout={800}>
-                    <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
-                      <Typography variant='h3' className={classes.weightedRandomizerText}>Weighted Randomizer</Typography>
-                    </Card>
-                  </Fade>
-                  <Fade in={this.state.weightedRandomizer} timeout={800}>
-                    <Card className={this.state.weightedRandomizer ? classes.weightedRandomizerFadeCard : classes.none} onMouseLeave={() => this.onExit('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
-                      <img src={weightedRandomizerGif} style={{ width: '100%', marginBottom: 20 }} />
-                    </Card>
-                  </Fade>
-                  {!this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronDown />expand<ChevronDown /></Button>}
-                  <div className={classes.infoDiv}>
-                    <Typography variant='h5'><u>Weighted Randomizer</u></Typography>
-                    <Typography variant='body2' style={{ textIdent: 20 }}>Customizable weight randomization function for arrays, published on npm. Users have the option to user a single array, or multiple arrays, depending on how they want to structure their data.</Typography>
-                    <br />
-                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
-                    <ul className={classes.ul}>
-                      <li className={classes.li}>JavaScript</li>
-                      <li className={classes.li}>React.js</li>
-                      <li className={classes.li}>Material UI</li>
-                    </ul>
-                  </div>
-                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronUp />close<ChevronUp /></Button>}
-                </Card>
-              </Collapse>
 
-              <Collapse in={this.state.expandetap} collapsedHeight='46vh' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.expandetap} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.etap} timeout={800}>
                     <Card className={!this.state.etap ? classes.etapCard : classes.none} onMouseEnter={() => this.onHover('etap')} onMouseLeave={() => this.onExit('etap')} onClick={() => this.cardClicked('etap')} >
@@ -168,6 +150,12 @@ class Projects extends Component {
                   {!this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'><u>Electronic ETAP</u></Typography>
+                    <Divider style={{ marginTop: 20 }} />
+                    <Divider />
+                    <Typography variant='overline'><b>Deployed Link: </b><br /><a href='https://sgc2018-etap-web.herokuapp.com/'>sgc2018-etap-web.herokuapp.com/</a></Typography>
+                    <Divider />
+                    <Typography variant='overline'><b>GitHub: </b><br /><a href='https://github.com/SeattleGiveCamp/SGC2018_etap-web'>github.com/SeattleGiveCamp/SGC2018_etap-web</a></Typography>
+                    <Divider style={{ marginBottom: 20 }} />
                     <Typography variant='body2' style={{ textIdent: 20 }}>Electronic Escaped Trash Assessment Protocol (Electronic ETAP) is a proof of concept web application designed for Zero Waste Washington and the United States  Environmental Protection Agency. This mobile-first web app will be the prototype to transition from the current data collection system to a paperless design. Electronic ETAP Will first be tested in Washington, and then rolled out nationwide.
                     </Typography>
                     <br />
@@ -186,6 +174,40 @@ class Projects extends Component {
                     </ul>
                   </div>
                   {this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronUp />close<ChevronUp /></Button>}
+                </Card>
+              </Collapse>
+
+              <Collapse in={this.state.expandweightedRandomizer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+                <Card className={classes.innerCardContainer}>
+                  <Fade in={!this.state.weightedRandomizer} timeout={800}>
+                    <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
+                      <Typography variant='h3' className={classes.weightedRandomizerText}>Weighted Randomizer</Typography>
+                    </Card>
+                  </Fade>
+                  <Fade in={this.state.weightedRandomizer} timeout={800}>
+                    <Card className={this.state.weightedRandomizer ? classes.weightedRandomizerFadeCard : classes.none} onMouseLeave={() => this.onExit('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
+                      <img src={weightedRandomizerGif} style={{ width: '100%', marginBottom: 20 }} />
+                    </Card>
+                  </Fade>
+                  {!this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronDown />expand<ChevronDown /></Button>}
+                  <div className={classes.infoDiv}>
+                    <Typography variant='h5'><u>Weighted Randomizer</u></Typography>
+                    <Divider style={{ marginTop: 20 }} />
+                    <Divider />
+                    <Typography variant='overline'><b>NPM: </b><a href='https://www.npmjs.com/package/@icantbelieveitsnotrandom/weighted-randomizer'>npm Link</a></Typography>
+                    <Divider />
+                    <Typography variant='overline'><b>GitHub: </b><a href='https://github.com/icantbelieveitsnotrandom/imeanireallycantbelieveitsnotrandom#readme'>GitHub Link</a></Typography>
+                    <Divider style={{ marginBottom: 20 }} />
+                    <Typography variant='body2' style={{ textIdent: 20 }}>Customizable weight randomization function for arrays, published on npm. Users have the option to user a single array, or multiple arrays, depending on how they want to structure their data.</Typography>
+                    <br />
+                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
+                    <ul className={classes.ul}>
+                      <li className={classes.li}>JavaScript</li>
+                      <li className={classes.li}>React.js</li>
+                      <li className={classes.li}>Material UI</li>
+                    </ul>
+                  </div>
+                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 

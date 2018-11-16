@@ -93,8 +93,7 @@ class Resume extends Component {
 
         <Typography variant='body2' className={classes.headlineText}>Technical Skills</Typography>
         <Typography variant='body2' className={classes.bodyText}><strong>Languages: </strong>JavaScript, HTML5, CSS3</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Tools: </strong> Git, iTerm2, zsh, Github, Visual Studio, Jest, Wallaby, Heroku</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Operating Tools: </strong>OS X, Windows , and Linux</Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>Tools: </strong> Git Github, Jest, Wallaby</Typography>
         <Typography variant='body2' className={classes.bodyText}><strong>Proficiencies: </strong>React.js, Redux, jQuery, Node.js, Express.js, MongoDB, PostgreSQL, SQL, NoSQL, Webpack, Material UI, Responsive-Web Design, Functional Programming, Test/Behavior Driven Development, Data Structures and Algorithms, Scalable and Modular Architecture for CSS (SMACSS), SCSS, Model View Controller (MVC) Architecture, Async Design Patterns, Object-Oriented Programming, Agile product development style</Typography>
 
         <Typography variant='body2' className={classes.headlineText}>Projects</Typography>
@@ -135,8 +134,7 @@ class Resume extends Component {
         <Typography variant='body2' className={classes.bodyText}><strong>Code Fellows | Seattle, WA</strong></Typography>
         <li className={classes.listItem}>Certificate -  Advanced Software Development in Full-Stack JavaScript | Sept 2018</li>
         <li className={classes.listItem2}>Strengths include: Providing mentorship to peers, Data Structures and Algorithms, React, Redux, Material-UI, Express, and MongoDB</li>
-        <Typography variant='body2' className={classes.bodyText}><strong>Code Fellows | Seattle, WA</strong></Typography>
-        <li className={classes.listItem}>University of Washington | Seattle, WA</li>
+        <Typography variant='body2' className={classes.bodyText}><strong>University of Washington | Seattle, WA</strong></Typography>
         <li className={classes.listItem2}>Bachelor’s of Science: Psychology | 2010 - 2013</li>
       </Paper>
     );
