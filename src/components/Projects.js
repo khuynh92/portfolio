@@ -42,7 +42,14 @@ class Projects extends Component {
     this.setState({ [card]: true, ['expand' + card]: true });
   }
 
-  expand = (card) => {
+  expand = async (card) => {
+
+    let newState = { ...this.state };
+    let newStateArray = Object.keys(newState);
+
+    newStateArray.forEach(element => newState[element] = false);
+
+    await this.setState(newState);
     this.setState({ [card]: !this.state[card], ['expand' + card]: !this.state['expand' + card] });
   }
   render() {
