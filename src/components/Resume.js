@@ -97,9 +97,8 @@ class Resume extends Component {
         <Typography variant='body2' className={classes.bodyText}><strong>Proficiencies: </strong>React.js, Redux, jQuery, Node.js, Express.js, MongoDB, PostgreSQL, SQL, NoSQL, Webpack, Material UI, Responsive-Web Design, Functional Programming, Test/Behavior Driven Development, Data Structures and Algorithms, Scalable and Modular Architecture for CSS (SMACSS), SCSS, Model View Controller (MVC) Architecture, Async Design Patterns, Object-Oriented Programming, Agile product development style</Typography>
 
         <Typography variant='body2' className={classes.headlineText}>Projects</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Chewsit 3.0 | Oct 2018 | <a href='https://chewsit.site' target='_blank' rel='noopener noreferrer'>https://chewsit.site</a></strong></Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>Chewsit | Oct 2018 | <a href='https://chewsit.site' target='_blank' rel='noopener noreferrer'>https://chewsit.site</a></strong></Typography>
         <Typography variant='body2' className={classes.bodyText}>A simplified food discovery website, utilizing  a  minimalistic and responsive UI design pattern. Allows users to set preferences for foods they liked and save favorite restaurants.</Typography>
-        <li className={classes.listItem}>Individual project that is a rework of chewsit</li>
         <li className={classes.listItem}>Utilizes React, Redux, Material UI, MongoDB, Express, Google Maps API, and Yelp API</li>
         <li className={classes.listItem}>Integrates OAuth and basic/bearer auth</li>
         
@@ -116,12 +115,14 @@ class Resume extends Component {
         <Typography variant='body2' className={classes.bodyText}><strong>Simple Auth | Sep 2018 | <a href='https://github.com/khuynh92/simple-auth' target='_blank' rel='noopener noreferrer'>https://github.com/khuynh92/simple-auth</a></strong></Typography>
         <li className={classes.listItem}>An easy to start up  Node.js/Express.js back end server, provides basic/bearer authentication and route protection. Allows additional Mongoose models to be implemented.</li>
         <li className={classes.listItem}>Provides additional Role Based Access Control information for front end clients.</li>
-        <li className={classes.listItem}>Utilizes Node.js, Express, and MongoDB</li>
-        <Typography variant='body2' className={classes.bodyText}><strong>Chewsit 1.0 | Mar 2018 | <a href='https://khuynh92.github.io/chewsit/' target='_blank' rel='noopener noreferrer'>https://khuynh92.github.io/chewsit/</a></strong></Typography>
-        <li className={classes.listItem}>Languages used: HTML5, CSS, and vanilla JavaScript</li>
-        <li className={classes.listItem}>Provided leadership and guidance to fellow members of the team.</li>
+        <li className={classes.listItem}>Utilizes Javascript, Node.js, Express, and MongoDB</li>
 
         <Typography variant='body2' className={classes.headlineText}>Experience</Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>DemocracyLab | Frontend Developer | Seattle, WA | Nov 2018 – Present</strong></Typography>
+        <li className={classes.listItem}>Implemented a responsive web design to the existing code base.</li>
+        <li className={classes.listItem}>Work closely with the UX Designer to create a more friendly user interface.</li>
+        <li className={classes.listItem}>Languages Used: Javascript, React.js, Flow, CSS3, SASS</li>
+
         <Typography variant='body2' className={classes.bodyText}><strong>Northwest ABA | Behavioral Therapist | Tacoma, WA | Dec 2015 - Jun 2018</strong></Typography>
         <li className={classes.listItem}>Certified Registered Behavior Technician under the BACB</li>
         <li className={classes.listItem}>Provided therapy to children with autism and related disorders based on the principles of Applied Behavior Analysis.</li>
