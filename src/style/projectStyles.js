@@ -42,6 +42,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     secondCard: {
@@ -60,6 +61,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     cardContainer: {
@@ -97,6 +99,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     chewsitText: {
@@ -120,6 +123,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     weightedRandomizerCard: {
@@ -138,6 +142,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     weightedRandomizerFadeCard: {
@@ -156,6 +161,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     weightedRandomizerText: {
@@ -184,6 +190,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     etapFadeCard: {
@@ -202,6 +209,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     etapText: {
@@ -227,6 +235,7 @@ export const styles = theme => {
       maxWidth: 400,
       height: '40vh',
       maxHeight: 300,
+      minHeight: 300,
       cursor: 'pointer',
     },
     none: {
