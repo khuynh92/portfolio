@@ -42,6 +42,10 @@ class Projects extends Component {
     this.setState({ [card]: true, ['expand' + card]: true });
   }
 
+  close = (card) => {
+    this.setState({[card]: false, ['expand' + card]: false});
+  }
+
   expand = async (card) => {
 
     let newState = { ...this.state };
@@ -100,7 +104,7 @@ class Projects extends Component {
                       <li className={classes.li}>Yelp Fusion API</li>
                     </ul>
                   </div>
-                  {this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.close('chewsit')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
@@ -135,7 +139,7 @@ class Projects extends Component {
                       <li className={classes.li}>Role Based Access Control</li>
                     </ul>
                   </div>
-                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.close('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
             </div>
@@ -180,7 +184,7 @@ class Projects extends Component {
                       <li className={classes.li}>Material UI</li>
                     </ul>
                   </div>
-                  {this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.close('etap')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
@@ -214,7 +218,7 @@ class Projects extends Component {
                       <li className={classes.li}>Material UI</li>
                     </ul>
                   </div>
-                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={this.close}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.close('weightedRandomizer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
