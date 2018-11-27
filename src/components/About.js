@@ -1,60 +1,12 @@
 import React, { Component } from 'react';
 import { withStyles, Grid, Button, Collapse, Fade, Typography, IconButton } from '@material-ui/core';
 import { LinkedinBox, GithubBox } from 'mdi-material-ui';
+import {styles} from '../style/aboutStyles.js';
 
 import Resume from './Resume.js';
 
 import khoa from '../assets/khoapic3.jpg';
-const styles = {
-  container: {
-    width: '90vw',
-    display: 'flex',
-    margin: 'auto',
-    // flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  resumeButton: {
-    margin: 'auto',
-    marginBottom: 0,
-    marginTop: '10vh',
-    width: 150,
-  },
-  resumeLink: {
-    textDecoration: 'none',
-    fontSize: 12,
-    marginBottom: 20,
-    marginTop: 4,
-    margin: 'auto',
-  },
-  profilePic: {
-    display: 'inline-block',
-    borderRadius: 10,
-    width: 200,
-  },
-  profile: {
-    marginTop: '4vh',
-    width: '550px',
-    margin: 'auto',
-  },
-  blurb: {
-    verticalAlign: 'top',
-    justifyContent: 'center',
-    display: 'inline-block',
-    width: '60%',
-    marginLeft: 20,
-  },
-  linkedIn: {
-    fontSize: 42,
-    color: '#0077B5',
-  },
-  github: {
-    fontSize: 42,
-    color: '#000000',
-  },
-  iconButton: {
-    marginLeft: -17,
-  },
-};
+
 
 class About extends Component {
 
