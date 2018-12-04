@@ -46,6 +46,7 @@ export const styles = (theme) => {
       marginTop: '4vh',
       width: '90vw',
       margin: 'auto',
+      maxWidth: 1200,
     },
     description: {
       [theme.breakpoints.up('md')]: {
