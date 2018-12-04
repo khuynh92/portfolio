@@ -20,7 +20,6 @@ import { styles } from '../style/navbarStyles.js';
 class Navbar extends Component {
 
   state = {
-    homeSlide: false,
     projectsSlide: false,
     aboutSlide: false,
     photosSlide: false,
@@ -46,16 +45,6 @@ class Navbar extends Component {
             <Typography variant="title" className={classes.grow}>Khoa Huynh</Typography>
 
             <List className={classes.list}>
-              <ListItem className={classes.listItem} onMouseLeave={() => this.itemOnLeave('homeSlide')} onMouseEnter={() => this.itemOnHover('homeSlide')}>
-                <Link to='/' className={classes.link}>
-                  <Button className={classes.button} >
-                    <HomeOutline className={classes.listIcon} />
-                    <Slide direction='down' in={this.state.homeSlide} timeout={300}>
-                      <Typography className={classes.listText} variant='body1'>Home</Typography>
-                    </Slide>
-                  </Button>
-                </Link>
-              </ListItem>
 
               <ListItem className={classes.listItem} onMouseLeave={() => this.itemOnLeave('aboutSlide')} onMouseEnter={() => this.itemOnHover('aboutSlide')}>
                 <Link to='/about' className={classes.link}>

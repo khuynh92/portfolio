@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
+import Favicon from 'react-favicon';
 
 import App from './components/App.js';
 
@@ -9,7 +10,10 @@ class Main extends Component {
 
   render() {
     return (
-      <App />
+      <Fragment>
+        <Favicon url='https://raw.githubusercontent.com/khuynh92/portfolio/master/src/assets/favicon.png' />
+        <App />
+      </Fragment>
     );
   }
 
