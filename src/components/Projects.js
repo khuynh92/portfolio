@@ -56,6 +56,7 @@ class Projects extends Component {
     await this.setState(newState);
     this.setState({ [card]: !this.state[card], ['expand' + card]: !this.state['expand' + card] });
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -65,7 +66,7 @@ class Projects extends Component {
             container
             className={classes.container}
           >
-            <Typography className={classes.helperText} variant='overline'>Hover over a card to preview project. Click to view project.</Typography>
+            <Typography className={classes.helperText} variant='overline'>Click on a project to view the details.</Typography>
 
             <div className={classes.cardContainer}>
               <Collapse in={this.state.expandchewsit} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
