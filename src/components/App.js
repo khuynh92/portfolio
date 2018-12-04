@@ -13,7 +13,7 @@ export default class App extends Component {
       <HashRouter>
         <React.Fragment>
           <Navbar />
-          <Route exact path='/' component={Dashboard} />
+          <Route exact path='/' component={About} />
           <Route path='/about' component={About}/>
           <Route path='/projects' component={Projects}/>
           {/* <Route path='/projects' component={Dashboard}/> */}
