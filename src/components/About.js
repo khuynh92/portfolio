@@ -109,7 +109,7 @@ class About extends Component {
                 <div className={classes.box}>
                   <Typography variant='overline' className={classes.boxTitle}>Projects</Typography>
                   <div className={classes.flexbox}>
-                    <Link to='/projects'>
+                    <Link to='/projects' className={classes.link}>
                       <Button variant='outlined'>
                         <FileDocumentBoxMultipleOutline/> <Typography className={classes.projectsButton} variant='button'>View Projects</Typography>
                       </Button>

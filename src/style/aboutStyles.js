@@ -36,11 +36,12 @@ export const styles = (theme) => {
         flexDirection: 'row',
         background: 'linear-gradient(0deg, #ffffff 90%, #dddedc 10%)',
         borderTopLeftRadius: 125,
+        borderTopRightRadius: 5,
       },
       [theme.breakpoints.up('md')]: {
         background: 'linear-gradient(0deg, #ffffff 75%, #dddedc 25%)',
       },
-      background: 'linear-gradient(0deg, #ffffff 75%, #dddedc 25%)',
+      background: 'linear-gradient(0deg, #ffffff 79%, #dddedc 21%)',
       display: 'flex',
       flexDirection: 'column',
       marginTop: '4vh',
@@ -49,11 +50,13 @@ export const styles = (theme) => {
       maxWidth: 1200,
     },
     description: {
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: 50,
+      },
       [theme.breakpoints.up('md')]: {
         marginTop: 20,  
         marginLeft: 14,
       },
-      marginLeft: 50,
       fontSize: 18,
     },
     linkedIn: {
@@ -138,8 +141,10 @@ export const styles = (theme) => {
       justifyContent: 'center',
     },
     projectsButton: {
-      textDecoration: 'none',
       paddingLeft: 12,
+    },
+    link: {
+      textDecoration: 'none',
     },
     skillsIcon: {
       padding: '0px 5px 0px 5px',
