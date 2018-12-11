@@ -11,10 +11,7 @@ export const styles = (theme) => {
       marginBottom: '10vh',
     },
     resumeButton: {
-      margin: 'auto',
-      marginBottom: 0,
-      marginTop: '10vh',
-      width: 150,
+      width: 125,
     },
     resumeLink: {
       textDecoration: 'none',
@@ -141,13 +138,37 @@ export const styles = (theme) => {
       justifyContent: 'center',
     },
     projectsButton: {
+      height: 75,
+    },
+    projectsButtonText: {
       paddingLeft: 12,
+      color: 'white',
     },
     link: {
       textDecoration: 'none',
+      margin: 'auto',
+      marginBottom: 20,
+      marginTop: '10vh',
+      width: 200,
     },
     skillsIcon: {
       padding: '0px 5px 0px 5px',
+    },
+    flexboxResume: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    closeDiv: {
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'fixed',
+      top: '90vh',
+      width: '90vw',
+    },
+    closeResumeButton: {
+      width: 200,
     },
   };
 };

@@ -17,10 +17,6 @@ class Projects extends Component {
     etap: false,
     simpleServer: false,
     weightedRandomizer: false,
-    expandchewsit: false,
-    expandweightedRandomizer: false,
-    expandsimpleServer: false,
-    expandetap: false,
   }
 
   onHover = () => {
@@ -36,14 +32,13 @@ class Projects extends Component {
     let newState = { ...this.state };
     let newStateArray = Object.keys(newState);
 
-    newStateArray.forEach(element => newState[element] = false);
+    newStateArray.forEach(element => element !== card ? newState[element] = false : newState[element] = !this.state[element]);
 
-    await this.setState(newState);
-    this.setState({ [card]: true, ['expand' + card]: true });
+    this.setState(newState);
   }
 
   close = (card) => {
-    this.setState({[card]: false, ['expand' + card]: false});
+    this.setState({[card]: false});
   }
 
   expand = async (card) => {
@@ -69,7 +64,7 @@ class Projects extends Component {
             <Typography className={classes.helperText} variant='overline'>Click on a project to view the details.</Typography>
 
             <div className={classes.cardContainer}>
-              <Collapse in={this.state.expandchewsit} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.chewsit} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.chewsit} timeout={800}>
                     <Card className={!this.state.chewsit ? classes.chewsitCard : classes.none} onMouseEnter={() => this.onHover('chewsit')} onClick={() => this.cardClicked('chewsit')} >
@@ -81,7 +76,7 @@ class Projects extends Component {
                       <img src={chewsitGif} style={{ width: '100%', marginBottom: 20 }} />
                     </Card>
                   </Fade>
-                  {!this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronDown />expand<ChevronDown /></Button>}
+                  {!this.state.chewsit && <Button className={classes.expandButton} onClick={() => this.expand('chewsit')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'>chewsit</Typography>
                     <Divider style={{ marginTop: 20 }} />
@@ -105,11 +100,11 @@ class Projects extends Component {
                       <li className={classes.li}>Yelp Fusion API</li>
                     </ul>
                   </div>
-                  {this.state.expandchewsit && <Button className={classes.expandButton} onClick={() => this.close('chewsit')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.chewsit && <Button className={classes.expandButton} onClick={() => this.close('chewsit')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
-              <Collapse in={this.state.expandsimpleServer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.simpleServer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.simpleServer} timeout={800}>
                     <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
@@ -121,7 +116,7 @@ class Projects extends Component {
                       <img src={simpleServerGif} style={{ width: '100%', marginBottom: 20 }} />
                     </Card>
                   </Fade>
-                  {!this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronDown />expand<ChevronDown /></Button>}
+                  {!this.state.simpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'><u>Simple Server</u></Typography>
                     <Divider style={{ marginTop: 20 }} />
@@ -140,14 +135,14 @@ class Projects extends Component {
                       <li className={classes.li}>Role Based Access Control</li>
                     </ul>
                   </div>
-                  {this.state.expandsimpleServer && <Button className={classes.expandButton} onClick={() => this.close('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.simpleServer && <Button className={classes.expandButton} onClick={() => this.close('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
             </div>
 
             <div className={classes.cardContainer}>
 
-              <Collapse in={this.state.expandetap} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.etap} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.etap} timeout={800}>
                     <Card className={!this.state.etap ? classes.etapCard : classes.none} onMouseEnter={() => this.onHover('etap')} onMouseLeave={() => this.onExit('etap')} onClick={() => this.cardClicked('etap')} >
@@ -159,7 +154,7 @@ class Projects extends Component {
                       <img src={etapGif} style={{ height: '95%', borderRadius: 5 }} />
                     </Card>
                   </Fade>
-                  {!this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronDown />expand<ChevronDown /></Button>}
+                  {!this.state.etap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'><u>Electronic ETAP</u></Typography>
                     <Divider style={{ marginTop: 20 }} />
@@ -185,11 +180,11 @@ class Projects extends Component {
                       <li className={classes.li}>Material UI</li>
                     </ul>
                   </div>
-                  {this.state.expandetap && <Button className={classes.expandButton} onClick={() => this.close('etap')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.etap && <Button className={classes.expandButton} onClick={() => this.close('etap')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
-              <Collapse in={this.state.expandweightedRandomizer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+              <Collapse in={this.state.weightedRandomizer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.weightedRandomizer} timeout={800}>
                     <Card className={!this.state.weightedRandomizer ? classes.weightedRandomizerCard : classes.none} onMouseEnter={() => this.onHover('weightedRandomizer')} onClick={() => this.cardClicked('weightedRandomizer')} >
@@ -201,7 +196,7 @@ class Projects extends Component {
                       <img src={weightedRandomizerGif} style={{ width: '100%', marginBottom: 20 }} />
                     </Card>
                   </Fade>
-                  {!this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronDown />expand<ChevronDown /></Button>}
+                  {!this.state.weightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'><u>Weighted Randomizer</u></Typography>
                     <Divider style={{ marginTop: 20 }} />
@@ -219,7 +214,7 @@ class Projects extends Component {
                       <li className={classes.li}>Material UI</li>
                     </ul>
                   </div>
-                  {this.state.expandweightedRandomizer && <Button className={classes.expandButton} onClick={() => this.close('weightedRandomizer')}><ChevronUp />close<ChevronUp /></Button>}
+                  {this.state.weightedRandomizer && <Button className={classes.expandButton} onClick={() => this.close('weightedRandomizer')}><ChevronUp />close<ChevronUp /></Button>}
                 </Card>
               </Collapse>
 
