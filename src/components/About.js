@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { withStyles, Grid, Button, Collapse, Fade, Typography, IconButton, Tooltip } from '@material-ui/core';
 import { LinkedinBox, GithubBox, LanguageJavascript, React as ReactLogo, Email, LanguageCss3, LanguageHtml5, Sass, Jquery, Nodejs, Webpack, MaterialUi, Docker, FileDocumentBoxMultipleOutline } from 'mdi-material-ui';
 import { styles } from '../style/aboutStyles.js';
@@ -28,11 +28,17 @@ class About extends Component {
           direction='column'
           className={classes.container}
         >
-          <Button className={classes.resumeButton} variant='outlined' color='primary' onClick={this.showResume}>{this.state.resume ? 'Close' : 'Resumé'}</Button>
-          <a target='_blank' rel='noopener noreferrer' className={classes.resumeLink} href='https://s3-us-west-2.amazonaws.com/khoascloud/Khoa+Huynh+-+Resume.pdf'>or download Resumé</a>
+          <Link to='/projects' className={classes.link}>
+            <Button variant='contained' className={classes.projectsButton} color='primary' fullWidth>
+              <FileDocumentBoxMultipleOutline />
+              <Typography className={classes.projectsButtonText} variant='button'>View Projects</Typography>
+            </Button>
+          </Link>
+
           <Collapse in={this.state.resume} timeout={1000}>
             <Resume />
           </Collapse>
+
           <div className={classes.profile}>
             <div className={classes.profilePicContainer}>
               <img className={classes.profilePic} src={khoa} />
@@ -64,9 +70,9 @@ class About extends Component {
                     </a>
                   </div>
                 </div>
+
                 <div className={classes.box}>
                   <Typography variant='overline' className={classes.boxTitle}>Skills</Typography>
-
                   <div className={classes.flexboxIcons}>
                     <div>
                       <Tooltip title='JavaScript'>
@@ -102,22 +108,25 @@ class About extends Component {
                         <Docker className={classes.skillsIcon} />
                       </Tooltip>
                     </div>
-                    View full list on my resume
                   </div>
+                </div>
 
-                </div>
                 <div className={classes.box}>
-                  <Typography variant='overline' className={classes.boxTitle}>Projects</Typography>
-                  <div className={classes.flexbox}>
-                    <Link to='/projects' className={classes.link}>
-                      <Button variant='outlined'>
-                        <FileDocumentBoxMultipleOutline/> <Typography className={classes.projectsButton} variant='button'>View Projects</Typography>
-                      </Button>
-                    </Link>
-                  </div>
+                  <Typography variant='overline' className={classes.boxTitle}>Résumé</Typography>
+                  <div className={classes.flexboxResume}>
+                    <Button className={classes.resumeButton} variant='outlined' onClick={this.showResume}>{this.state.resume ? 'Close' : 'Resumé'}</Button>
+                    <a target='_blank' rel='noopener noreferrer' className={classes.resumeLink} href='https://s3-us-west-2.amazonaws.com/khoascloud/Khoa+Huynh+-+Resume.pdf'>or download Résumé</a>
+                  </div>  
                 </div>
+
               </div>
             </div>
+            {
+              this.state.resume &&
+              <div className={classes.closeDiv}>
+                <Button onClick={this.showResume} className={classes.closeResumeButton} variant='contained' color='secondary'>Close Résumé</Button>
+              </div>
+            }
           </div>
         </Grid>
       </Fade>
