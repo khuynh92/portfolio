@@ -32,6 +32,10 @@ class Navbar extends Component {
     this.setState({ [item]: false });
   }
 
+  // homeRedirect = () => {
+  //   window.location.href = 'https://sgc2018-etap-web.herokuapp.com/';
+  // }
+
   render() {
     const { classes } = this.props;
     return (
@@ -41,7 +45,9 @@ class Navbar extends Component {
 
             <NavMenu />
 
-            <Typography variant="title" className={classes.grow}>Khoa Huynh</Typography>
+            <Link to='/' className={classes.grow}>
+              <Typography className={classes.titleText} variant="title" onClick={this.homeRedirect}>Khoa Huynh</Typography>
+            </Link>
 
             <List className={classes.list}>
 

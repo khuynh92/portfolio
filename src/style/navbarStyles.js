@@ -16,8 +16,18 @@ export const styles = theme => {
     grow: {
       flexGrow: 1,
       color: '#4E4F4A',
+      cursor: 'pointer',
       fontFamily: 'Montserrat',
       fontSize: 24,
+      textDecoration: 'none',
+    },
+    titleText: {
+      flexGrow: 1,
+      color: '#4E4F4A',
+      cursor: 'pointer',
+      fontFamily: 'Montserrat',
+      fontSize: 24,
+      textDecoration: 'none',
     },
     menuButton: {
       paddingTop: 10,
