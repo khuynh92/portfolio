@@ -29,9 +29,8 @@ class Resume extends Component {
         <Typography variant='body2' className={classes.introText}>Full Stack JavaScript Developer with a B.S degree in Psychology. Aims to harmonize psychology principles along with software development to create user driven products. Strives to make the best user experience for all, with a passion in accessibility features for underrepresented populations. Seeking work for a company whose values align with improving the lives of others through technology.</Typography>
 
         <Typography variant='body2' className={classes.headlineText}>Technical Skills</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Languages: </strong>JavaScript, HTML5, CSS3</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Tools: </strong> Git Github, Jest, Wallaby</Typography>
-        <Typography variant='body2' className={classes.bodyText}><strong>Proficiencies: </strong>React.js, Redux, jQuery, Node.js, Express.js, MongoDB, PostgreSQL, SQL, NoSQL, Webpack, Material UI, Responsive-Web Design, Functional Programming, Test/Behavior Driven Development, Data Structures and Algorithms, Scalable and Modular Architecture for CSS (SMACSS), SCSS, Model View Controller (MVC) Architecture, Async Design Patterns, Object-Oriented Programming, Agile product development style</Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>Tools: </strong> Github, Visual Studio, Jest, Heroku, Docker, AWS</Typography>
+        <Typography variant='body2' className={classes.bodyText}><strong>Proficiencies: </strong>JavaScript, HTML5, CSS3, React.js, Redux, Node.js, Express.js, MongoDB, PostgreSQL, Webpack,  SCSS, jQuery, Material UI, Test Driven Development, MVC Architecture, Object-Oriented Programming, and Agile (Scrum) Methodologies.</Typography>
 
         <Typography variant='body2' className={classes.headlineText}>Projects</Typography>
         <Typography variant='body2' className={classes.bodyText}><strong>Chewsit | Oct 2018 | <a href='https://chewsit.site' target='_blank' rel='noopener noreferrer'>https://chewsit.site</a></strong></Typography>
