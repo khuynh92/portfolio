@@ -165,7 +165,8 @@ export const styles = (theme) => {
       justifyContent: 'center',
       position: 'fixed',
       top: '90vh',
-      width: '90vw',
+      left: '0',
+      width: '100vw',
     },
     closeResumeButton: {
       width: 200,

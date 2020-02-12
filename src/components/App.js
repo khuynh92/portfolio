@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dashboard from './Dashboard.js';
+// import Dashboard from './Dashboard.js';
 import { HashRouter, Route } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import About from './About.js';
@@ -13,12 +13,11 @@ export default class App extends Component {
       <HashRouter>
         <React.Fragment>
           <Navbar />
-          <Route exact path='/' component={About} />
+          <Route exact path='/' component={Projects} />
           <Route path='/about' component={About}/>
           <Route path='/projects' component={Projects}/>
           {/* <Route path='/projects' component={Dashboard}/> */}
           <Route path='/photos' component={Photos}/>
-
         </React.Fragment>
       </HashRouter>
     );

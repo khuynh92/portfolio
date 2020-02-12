@@ -4,7 +4,7 @@ import Fade from '@material-ui/core/Fade';
 
 import chewsitGif from '../assets/chewsitGif.gif';
 import weightedRandomizerGif from '../assets/weightedRandomizerGif.gif';
-import simpleServerGif from '../assets/simpleServerGif.gif';
+import ODHomepage from '../assets/ODHomepage.gif';
 import etapGif from '../assets/etapGif.gif';
 import { styles } from '../style/projectStyles.js';
 
@@ -80,7 +80,7 @@ class Projects extends Component {
                   <div className={classes.infoDiv}>
                     <Typography variant='h5'>chewsit</Typography>
                     <Divider style={{ marginTop: 20 }} />
-                    <Typography variant='overline'><b>Deployed Link: </b><a href='https://chewsit.site/'>chewsit.site</a></Typography>
+                    <Typography variant='overline'><b>Deployed Link: </b><a href='https://chewsit.herokuapp.com/'>chewsit.site</a></Typography>
                     <Divider />
                     <Typography variant='overline'><b>GitHub: </b><a href='https://github.com/khuynh92/chewsit-client'>github.com/khuynh92/chewsit-client</a></Typography>
                     <Divider style={{ marginBottom: 20 }} />
@@ -104,44 +104,6 @@ class Projects extends Component {
                 </Card>
               </Collapse>
 
-              <Collapse in={this.state.simpleServer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
-                <Card className={classes.innerCardContainer}>
-                  <Fade in={!this.state.simpleServer} timeout={800}>
-                    <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
-                      <Typography variant='h3' className={classes.weightedRandomizerText}>Simple Server</Typography>
-                    </Card>
-                  </Fade>
-                  <Fade in={this.state.simpleServer} timeout={800}>
-                    <Card className={this.state.simpleServer ? classes.simpleServerFadeCard : classes.none} onMouseLeave={() => this.onExit('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
-                      <img src={simpleServerGif} style={{ width: '100%', marginBottom: 20 }} />
-                    </Card>
-                  </Fade>
-                  {!this.state.simpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronDown />expand<ChevronDown /></Button>}
-                  <div className={classes.infoDiv}>
-                    <Typography variant='h5'><u>Simple Server</u></Typography>
-                    <Divider style={{ marginTop: 20 }} />
-                    <Divider />
-                    <Typography variant='overline'><b>GitHub: </b><a href='https://github.com/khuynh92/simple-auth'>github.com/khuynh92/simple-auth</a></Typography>
-                    <Divider style={{ marginBottom: 20 }} />
-                    <Typography variant='body2' style={{ textIdent: 20 }}>An easy to start up Node.js back end server. Provides basic/bearer authentication and route protection. Allows additional MongoDB models to be implemented. This server also utilizes Role Based Access Control, which can be utilized on the front end client.
-                    </Typography>
-                    <br />
-                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
-                    <ul className={classes.ul}>
-                      <li className={classes.li}>JavaScript</li>
-                      <li className={classes.li}>Node.js</li>
-                      <li className={classes.li}>Express.js</li>
-                      <li className={classes.li}>MongoDB (NoSQL)</li>
-                      <li className={classes.li}>Role Based Access Control</li>
-                    </ul>
-                  </div>
-                  {this.state.simpleServer && <Button className={classes.expandButton} onClick={() => this.close('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
-                </Card>
-              </Collapse>
-            </div>
-
-            <div className={classes.cardContainer}>
-
               <Collapse in={this.state.etap} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.etap} timeout={800}>
@@ -156,7 +118,7 @@ class Projects extends Component {
                   </Fade>
                   {!this.state.etap && <Button className={classes.expandButton} onClick={() => this.expand('etap')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
-                    <Typography variant='h5'><u>Electronic ETAP</u></Typography>
+                    <Typography variant='h5'>Electronic ETAP</Typography>
                     <Divider style={{ marginTop: 20 }} />
                     <Divider />
                     <Typography variant='overline'><b>Deployed Link: </b><br /><a href='https://sgc2018-etap-web.herokuapp.com/'>sgc2018-etap-web.herokuapp.com/</a></Typography>
@@ -184,6 +146,41 @@ class Projects extends Component {
                 </Card>
               </Collapse>
 
+            </div>
+
+            <div className={classes.cardContainer}>
+
+              <Collapse in={this.state.simpleServer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
+                <Card className={classes.innerCardContainer}>
+                  <Fade in={!this.state.simpleServer} timeout={800}>
+                    <Card className={!this.state.simpleServer ? classes.card : classes.none} onMouseEnter={() => this.onHover('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
+                      <Typography variant='h3' className={classes.weightedRandomizerText}>OneDrive<br />Homepage</Typography>
+                    </Card>
+                  </Fade>
+                  <Fade in={this.state.simpleServer} timeout={800}>
+                    <Card className={this.state.simpleServer ? classes.simpleServerFadeCard : classes.none} onMouseLeave={() => this.onExit('simpleServer')} onClick={() => this.cardClicked('simpleServer')} >
+                      <img src={ODHomepage} style={{ width: '100%', marginBottom: 20 }} />
+                    </Card>
+                  </Fade>
+                  {!this.state.simpleServer && <Button className={classes.expandButton} onClick={() => this.expand('simpleServer')}><ChevronDown />expand<ChevronDown /></Button>}
+                  <div className={classes.infoDiv}>
+                    <Typography variant='h5'>OneDrive HomePage</Typography>
+                    <Divider style={{ marginBottom: 20 }} />
+                    <Typography variant='body2' style={{ textIdent: 20 }}>
+                    Planned and developed several marketing pages for OneDrive. Collaborated closely with Project Managers, Designers, and Product Marketing Managers.                    </Typography>
+                    <br />
+                    <Typography variant='subtitle1'><b>Technologies Used</b></Typography>
+                    <ul className={classes.ul}>
+                      <li className={classes.li}>TypeScript</li>
+                      <li className={classes.li}>C#</li>
+                      <li className={classes.li}>Knockout.js</li>
+                      <li className={classes.li}>Sass</li>
+                    </ul>
+                  </div>
+                  {this.state.simpleServer && <Button className={classes.expandButton} onClick={() => this.close('simpleServer')}><ChevronUp />close<ChevronUp /></Button>}
+                </Card>
+              </Collapse>
+
               <Collapse in={this.state.weightedRandomizer} collapsedHeight='340px' timeout={800} style={{ width: '100%', marginBottom: 20 }}>
                 <Card className={classes.innerCardContainer}>
                   <Fade in={!this.state.weightedRandomizer} timeout={800}>
@@ -198,7 +195,7 @@ class Projects extends Component {
                   </Fade>
                   {!this.state.weightedRandomizer && <Button className={classes.expandButton} onClick={() => this.expand('weightedRandomizer')}><ChevronDown />expand<ChevronDown /></Button>}
                   <div className={classes.infoDiv}>
-                    <Typography variant='h5'><u>Weighted Randomizer</u></Typography>
+                    <Typography variant='h5'>Weighted Randomizer</Typography>
                     <Divider style={{ marginTop: 20 }} />
                     <Divider />
                     <Typography variant='overline'><b>NPM: </b><a href='https://www.npmjs.com/package/@icantbelieveitsnotrandom/weighted-randomizer'>npm Link</a></Typography>

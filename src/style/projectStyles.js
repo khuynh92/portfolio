@@ -30,10 +30,9 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        // marginBottom: 25,
       },
 
-      backgroundColor: '#337A89',
+      backgroundColor: '#0078d4',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -52,7 +51,7 @@ export const styles = theme => {
         marginRight: 'auto',
         // marginBottom: 25,
       },
-      backgroundColor: '#337A89',
+      backgroundColor: '#0078d4',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -70,7 +69,6 @@ export const styles = theme => {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginBottom: 0,
-        // height: '90%',
         minHeight: 650,
         width: '90%',
 
@@ -79,8 +77,6 @@ export const styles = theme => {
       alignItems: 'center',
       flexDirection: 'column',
       width: '50%',
-      // height: '55%',
-      // maxHeight: 325,
       marginBottom: 20,
     },
     chewsitCard: {
@@ -88,7 +84,6 @@ export const styles = theme => {
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        // marginBottom: 25,
       },
       backgroundColor: '#D36F75',
       display: 'flex',
@@ -254,6 +249,7 @@ export const styles = theme => {
     expandButton: {
       borderRadius: 0,
       backgroundColor: 'rgb(240, 240, 240)',
+      height: 40,
       width: '100%',
     },
     ul: {

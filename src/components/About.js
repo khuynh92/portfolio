@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles, Grid, Button, Collapse, Fade, Typography, IconButton, Tooltip } from '@material-ui/core';
-import { LinkedinBox, GithubBox, LanguageJavascript, React as ReactLogo, Email, LanguageCss3, LanguageHtml5, Sass, Jquery, Nodejs, Webpack, MaterialUi, Docker, FileDocumentBoxMultipleOutline } from 'mdi-material-ui';
+import { LinkedinBox, GithubBox, LanguageJavascript, React as ReactLogo, Email, LanguageCss3, LanguageHtml5, Sass, Jquery, Nodejs, Webpack, MaterialUi, Docker, FileDocumentBoxMultipleOutline, LanguageTypescript, LanguageCsharp } from 'mdi-material-ui';
 import { styles } from '../style/aboutStyles.js';
 
 import Resume from './Resume.js';
@@ -75,6 +75,9 @@ class About extends Component {
                   <Typography variant='overline' className={classes.boxTitle}>Skills</Typography>
                   <div className={classes.flexboxIcons}>
                     <div>
+                      <Tooltip title='TypeScript'>
+                        <LanguageTypescript className={classes.skillsIcon} />
+                      </Tooltip>
                       <Tooltip title='JavaScript'>
                         <LanguageJavascript className={classes.skillsIcon} />
                       </Tooltip>
@@ -84,14 +87,17 @@ class About extends Component {
                       <Tooltip title='React.js'>
                         <ReactLogo className={classes.skillsIcon} />
                       </Tooltip>
+                      <Tooltip title='C#'>
+                        <LanguageCsharp className={classes.skillsIcon} />
+                      </Tooltip>
                       <Tooltip title='CSS3'>
                         <LanguageCss3 className={classes.skillsIcon} />
                       </Tooltip>
+                    </div>
+                    <div>
                       <Tooltip title='HTML5'>
                         <LanguageHtml5 className={classes.skillsIcon} />
                       </Tooltip>
-                    </div>
-                    <div>
                       <Tooltip title='SASS'>
                         <Sass className={classes.skillsIcon} />
                       </Tooltip>

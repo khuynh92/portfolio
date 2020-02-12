@@ -23,7 +23,7 @@
   "rules": {
     "no-console": "warn",
     "indent": [
-      "error",
+      "warn",
       2,
       {"SwitchCase": 1}
     ],
